@@ -1,18 +1,65 @@
-## Simple web server using terraform 
+# AWS IAM Terraform
 
-This Terraform repository provides infrastructure as code (IaC) for deploying a simple EC2 instance on AWS using a combination of remote and local modules. By leveraging Terraform's capabilities, this project streamlines the provisioning process, allowing for consistent and scalable infrastructure deployments with ease. 
+This repository contains Terraform configurations to manage AWS IAM (Identity and Access Management) resources.
 
-## Installation
+## Overview
 
-- Rename `terraform.tfvars.example` file to `terraform.tfvars` and change values depending on yours.
-- Export `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY` to your local system environment.
-- Run `terraform init`  to initialize the dependencies and modules.
-- Run `terraform validate`  to validate before applying.
-- Run `terraform apply` to deploy the infrastructure to the AWS console.
-- Once the deployment success the created instance public IP will be printed in the terminal, you can use it to access it from your browser.
-- Run `ssh -i ~/.ssh/id_rsa ubuntu@PUBLIC_IP` to access the instance using SSH.
+The AWS IAM Terraform configuration allows you to define and manage IAM users, groups, roles, and policies in your AWS account. With Terraform, you can automate the provisioning and management of IAM resources, enabling you to enforce security best practices, manage access permissions, and streamline identity management in your AWS environment.
 
-## Note 
+## Features
 
-- Date `latest-ubuntu-image` tested only on the `us-east-1` region only, you maybe change the filters depend on the region.
-- Ensure to execute `terraform destroy` to dismantle the infrastructure, mitigating unnecessary AWS costs.
+- Define IAM users, groups, roles, and policies as code.
+- Manage IAM resources in a version-controlled and repeatable manner.
+- Enforce security policies and access controls across AWS services.
+- Automate IAM resource provisioning and updates.
+
+## Prerequisites
+
+Before getting started, ensure you have the following installed on your local machine:
+
+- [Terraform](https://www.terraform.io/downloads.html)
+- AWS CLI (configured with appropriate permissions)
+
+## Usage
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/minaroid/aws-iam-terraform.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd aws-iam-terraform
+    ```
+
+3. Initialize Terraform:
+
+    ```bash
+    terraform init
+    ```
+
+4. Review the Terraform plan:
+
+    ```bash
+    terraform plan
+    ```
+
+5. Apply the Terraform configuration:
+
+    ```bash
+    terraform apply
+    ```
+
+## Configuration
+
+- Update the `terraform.tfvars` file with your AWS credentials and any other configuration variables specific to your environment.
+
+## Contributing
+
+Contributions are welcome! Feel free to submit pull requests, suggest improvements, or report issues.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
